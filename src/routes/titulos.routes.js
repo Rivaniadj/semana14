@@ -2,24 +2,22 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/tituloController')
 
+//busca titulo por id
+router.get('/:id', controller.getId)
 
 //listar todos os titulos/get/find
- router.get('/', controller.getAll)
- //ler todos os títulos da Marvel/ get/find
- router.get("/marvel", controller. mostrarTituloMavel)
+router.get('/', controller.getAll)
+//ler todos os títulos da Marvel/ get/finds
+router.get('/marvel', controller.mostrarTituloMarvel)
 
- //ler todos os títulos da Ghibli/ get/find
- router.get("/glibli", controller.mostrarTituloGhibli)
+//ler todos os títulos da Ghibli/ get/find
+router.get('/glibli', controller.mostrarTituloGhibli)
 
 // ler todos os títulos da Pixar/ get/find
- router.get('/pixar', controller.getAllPixar)
+router.get('/pixar', controller.getAllPixar)
 
 //criar um novo titulo/post/save
 router.post('/', controller.createTitle)
-
-
-
-//listar um titulo/get/findById
 
 //atualizar uma informacao especifica num titulo/patch/findById/save
 router.patch('/:id', controller.updateOne)

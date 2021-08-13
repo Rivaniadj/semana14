@@ -13,8 +13,7 @@ const controller = require('../controllers/estudioController')
  //atualizar uma informacao especifica num estudio/patch/findById/save
  router.patch('/:id', controller.updateOne)
 
-//listar um estudio/get/findById
-
-//deletar um estudio/delete/findById/remove
+//Deleta estudio : delete/findById
+router.delete('/:id', controller.deletaEstudio)
 
 module.exports = router
